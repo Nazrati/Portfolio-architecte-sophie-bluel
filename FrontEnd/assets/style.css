@@ -292,15 +292,14 @@ footer nav ul {
 
 /** section #portfolio **/
 
-#portfolio p {
+.filter-button p {
 	border-radius: 60px;
 	border: 1px solid #1D6154;
-	padding: 10px 28px; 
-    margin: 60px auto;
-	background: #FFFEF8;
+	padding: 10px 28px;
+	margin: 60px auto;
 	color: #1D6154;
 	font-weight: 700;
-	
+
 }
 
 #portfolio .filter {
@@ -336,7 +335,7 @@ a {
 }
 
 .login-container a {
-	
+
 	font-family: 'Work Sans';
 	text-decoration: underline;
 }
@@ -348,6 +347,7 @@ a {
 
 .login-container label {
 	margin-top: 10px;
+	font-family: 'Work Sans';
 }
 
 .login-container input[type="text"],
@@ -361,26 +361,126 @@ a {
 
 .login-container input[type="submit"] {
 	cursor: pointer;
+	font-family: 'Syne';
 }
 
 .notification {
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
+	padding: 15px;
+	border-radius: 5px;
+	margin-top: 15px;
+	text-align: center;
+	font-weight: bold;
 }
 
 .notification.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+	background-color: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
 }
 
 .notification.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+	background-color: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
 }
 
+/** dialogue:modal**/
+dialog {
+	border-radius: 10px;
+	border-color: #FFF;
+	width: 400px;
+	height: 500px;
+}
 
+dialog button {
+	color: white;
+	background: #1D6154;
+	font-family: 'Syne';
+	border-radius: 60px;
+	border-color: transparent;
+	width: 237px;
+	height: 36px;
+}
+
+dialog {
+	position: relative;
+}
+
+#close-dialog {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	/* Pour indiquer qu'il est cliquable */
+}
+
+/* Centrer le bouton au bas du dialog */
+dialog>button {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Ceci déplace le bouton vers la gauche de sa propre largeur à 50%, le centrant parfaitement.*/
+}
+
+.edit-container {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.edit-portfolio {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#introduction,
+#portfolio {
+	position: relative;
+}
+
+.edit-container {
+	position: absolute;
+	bottom: -30%;
+	padding: 58px;
+}
+
+#portfolio h2+.edit-portfolio {
+	position: absolute;
+	top: 9px;
+	left: 63%;
+}
+
+/** black-bloc**/
+.black-bloc {
+	font-family: 'Work Sans';
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 19px;
+	background-color: black;
+	width: 100vw;
+	height: 60px;
+	margin-left: calc(-1 * ((100vw - 100%) / 2));
+}
+
+.blackbloc-edition {
+	color: white;
+	font-family: 'Work Sans';
+	font-weight: 400;
+}
+
+.blackbloc-paragraphs {
+	font-family: 'Work Sans';
+	border-radius: 60px;
+	background: #FFF;
+	color: #000;
+	width: 216px;
+	height: 38px;
+	font-weight: 700;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -29,3 +29,6 @@ const createGallery = ({ works = [] }) => {
 };
 
 export default createGallery;
+
+
+

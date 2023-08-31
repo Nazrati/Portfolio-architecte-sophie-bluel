@@ -15,3 +15,23 @@ const createFilters = ({ worksData, onSelectFilter }) => {
 };
 
 export default createFilters;
+
+// pour appliquer une couleur au boutons active
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-button');
+
+  filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          // Réinitialisation du style pour tous les boutons et éléments <p>
+          filterButtons.forEach(btn => {
+              btn.style.backgroundColor = ""; 
+              btn.querySelector('p').style.color = ""; 
+          });
+
+          // Appliquer le style au bouton cliqué
+          this.style.backgroundColor = "#1D6154";
+          this.querySelector('p').style.color = "white";
+      });
+  });
+});
+
