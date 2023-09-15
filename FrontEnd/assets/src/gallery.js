@@ -1,4 +1,5 @@
-const createGallery = ({ works = [] }) => {
+const createGallery = ({ works = [], isEditable = false, onDeleteWork }) => {
+  const galleryElement = document.createElement("div");
   let galleryWorks = [...works];
 
   const setGallery = (newWorks) => {
@@ -7,19 +8,31 @@ const createGallery = ({ works = [] }) => {
   };
 
   const renderGallery = () => {
-    const galleryElement = document.getElementById("gallery");
-    let template = "";
+    galleryElement.innerHTML = "";
 
     galleryWorks.forEach((work) => {
-      template += `
-            <figure>
-              <img alt="${work.title}" src="${work.imageUrl}"/>
-              <figcaption>${work.title}</figcaption>
-            </figure>
-          `;
+      const figure = document.createElement("figure");
+      figure.innerHTML = `
+      <img alt="${work.title}" src="${work.imageUrl}"/>
+      ${isEditable ? '' : `<figcaption>${work.title}</figcaption>`}
+      <p class="editNone">éditer</p>
+    `;
+
+      if (isEditable) {
+        // création du bouton
+
+        // addEventListener 
+        // ici on va appeler la fonction removeWork en lui donnant le work.id
+      }
+
+      galleryElement.appendChild(figure);
     });
 
-    galleryElement.innerHTML = template;
+    return galleryElement;
+  };
+
+  const removeWork = (workId) => {
+    onDeleteWork(workId);
   };
 
   return {
@@ -30,5 +43,5 @@ const createGallery = ({ works = [] }) => {
 
 export default createGallery;
 
-
-
+const galleryElement = document.createElement("div");
+galleryElement.classList.add("modal-gallery-grid");

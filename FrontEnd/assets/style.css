@@ -223,7 +223,7 @@ li:hover {
 	margin-bottom: 1em;
 }
 
-.gallery {
+.gallery div {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -293,13 +293,7 @@ footer nav ul {
 /** section #portfolio **/
 
 .filter-button p {
-	border-radius: 60px;
-	border: 1px solid #1D6154;
-	padding: 10px 28px;
-	margin: 60px auto;
 	color: #1D6154;
-	font-weight: 700;
-
 }
 
 #portfolio .filter {
@@ -307,7 +301,27 @@ footer nav ul {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
+	flex-wrap: wrap;
+		margin-bottom: 25px;
+	}
+	
+	.filter-button {
+		background-color: #FFFEF8;
+		transition: background-color 0.3s ease;
+		border-radius: 60px;
+		border: 1px solid #1D6154;
+		padding: 10px 28px;
+		margin: 10px;
+		font-weight: 700;
+	}
+	
+	
+	.filter-button.active {
+		background-color: #1D6154;
+	}
+	
+	.filter-button.active p {
+		color: #FFFFFF;
 }
 
 a {
@@ -388,8 +402,8 @@ a {
 dialog {
 	border-radius: 10px;
 	border-color: #FFF;
-	width: 400px;
-	height: 500px;
+	width: 500px;
+	height: 550px;
 }
 
 dialog button {
@@ -398,8 +412,7 @@ dialog button {
 	font-family: 'Syne';
 	border-radius: 60px;
 	border-color: transparent;
-	width: 237px;
-	height: 36px;
+	padding: 10px 15px;
 }
 
 dialog {
@@ -421,6 +434,58 @@ dialog>button {
 	left: 50%;
 	transform: translateX(-50%);
 	/* Ceci déplace le bouton vers la gauche de sa propre largeur à 50%, le centrant parfaitement.*/
+}
+
+#media-dialog {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 20px;
+}
+
+.modal-title {
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Work Sans';
+	font-size: 26px;
+}
+
+
+.modal-gallery-grid {
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+	grid-template-columns: repeat(5, 1fr);
+	align-items: center;
+	justify-items: center;
+}
+
+.modal-gallery-grid figure:nth-child(11) {
+	grid-column: span 5;
+}
+
+.modal-gallery-grid img {
+	width: 75px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.separator-line {
+    width: 420px;
+    height: 1px;
+    background: #B3B3B3;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    align-self: center; 
 }
 
 .edit-container {
@@ -464,6 +529,7 @@ dialog>button {
 	width: 100vw;
 	height: 60px;
 	margin-left: calc(-1 * ((100vw - 100%) / 2));
+	display: none;
 }
 
 .blackbloc-edition {
@@ -472,15 +538,3 @@ dialog>button {
 	font-weight: 400;
 }
 
-.blackbloc-paragraphs {
-	font-family: 'Work Sans';
-	border-radius: 60px;
-	background: #FFF;
-	color: #000;
-	width: 216px;
-	height: 38px;
-	font-weight: 700;
-	display: flex;
-    align-items: center;
-    justify-content: center;
-}
