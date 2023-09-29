@@ -38,7 +38,11 @@ import createGallery from "./gallery.js";
  
    if (token) {
      // Afficher bouton + bandeau + remplacer le bouton login par logout
+     document.querySelector(".black-bloc").style.display = "flex";
+     document.querySelector(".filter").style.display = "none";
+     document.querySelector(".login").style.display = "none";
    }
+   
    const works = await fetchWorks();
    const gallery = createGallery({ works });
    galleryContainer.appendChild(gallery.renderGallery());
@@ -69,28 +73,11 @@ import createGallery from "./gallery.js";
 });
  };
  init();
- 
- const editModifier = document.getElementById('edit-media');
- const dialog = document.getElementById('media-dialog');
- const closeSvg = document.getElementById('close-dialog');
- 
- // Ajouter un écouteur d'événement 'click' au bouton "Modifier" pour ouvrir la fenêtre modale
- editModifier.addEventListener('click', () => {
-   dialog.showModal();// La méthode showModal() ouvre le <dialog> comme une fenêtre modal
-   document.body.style.overflow = "hidden"; // Désactive le défilement
- });
- 
- // Ajouter un écouteur d'événement 'click' au bouton "Fermer" pour fermer la fenêtre modale
- closeSvg.addEventListener('click', () => {
-   dialog.close(); // La méthode close() ferme le <dialog>
-   document.body.style.overflow = ""; // Réactive le défilement
- });
- 
- // Ajouter un écouteur d'événement 'click' à la fenêtre entière 
- // Pour fermer la fenêtre modale lorsqu'on clique en dehors de celle-ci
- window.addEventListener('click', (event) => {
-   if (event.target === dialog) {
-     dialog.close();
-     document.body.style.overflow = ""; // Réactive le défilement
-   }
- });
+
+
+
+
+
+
+
+

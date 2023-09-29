@@ -15,14 +15,22 @@ const createGallery = ({ works = [], isEditable = false, onDeleteWork }) => {
       figure.innerHTML = `
       <img alt="${work.title}" src="${work.imageUrl}"/>
       ${isEditable ? '' : `<figcaption>${work.title}</figcaption>`}
-      <p class="editNone">éditer</p>
     `;
 
       if (isEditable) {
-        // création du bouton
+       // création du bouton
+       const deleteButton = document.createElement("i");
+       deleteButton.classList.add("delete-work");
+       deleteButton.classList.add("fa-solid");
+       deleteButton.classList.add("fa-trash-can");
 
-        // addEventListener 
+       // addEventListener 
+       deleteButton.addEventListener("click", (e) => {
+         e.preventDefault();
         // ici on va appeler la fonction removeWork en lui donnant le work.id
+         removeWork(work.id);
+       });
+       figure.appendChild(deleteButton);
       }
 
       galleryElement.appendChild(figure);
@@ -44,4 +52,4 @@ const createGallery = ({ works = [], isEditable = false, onDeleteWork }) => {
 export default createGallery;
 
 const galleryElement = document.createElement("div");
-galleryElement.classList.add("modal-gallery-grid");
+galleryElement.classList.add("modal-gallery");

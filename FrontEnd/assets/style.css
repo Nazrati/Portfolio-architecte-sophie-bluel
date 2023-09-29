@@ -424,16 +424,14 @@ dialog {
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
-	/* Pour indiquer qu'il est cliquable */
 }
 
-/* Centrer le bouton au bas du dialog */
+
 dialog>button {
 	position: absolute;
 	bottom: 50px;
 	left: 50%;
 	transform: translateX(-50%);
-	/* Ceci déplace le bouton vers la gauche de sa propre largeur à 50%, le centrant parfaitement.*/
 }
 
 #media-dialog {
@@ -461,22 +459,41 @@ dialog>button {
 }
 
 
-.modal-gallery-grid {
-	display: grid;
-	grid-template-rows: repeat(3, auto);
-	grid-template-columns: repeat(5, 1fr);
-	align-items: center;
-	justify-items: center;
+.modal-gallery {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; 
 }
 
-.modal-gallery-grid figure:nth-child(11) {
-	grid-column: span 5;
+.modal-gallery figure {
+    flex: 0 0 33.333333%; 
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-gallery-grid img {
+.modal-gallery figure img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.modal-gallery img {
 	width: 75px;
 	height: 100px;
 	object-fit: cover;
+}
+
+figure {
+    position: relative;  
+}
+
+.delete-work {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    cursor: pointer; 
 }
 
 .separator-line {
@@ -516,6 +533,113 @@ dialog>button {
 	top: 9px;
 	left: 63%;
 }
+
+/** add-photo-section**/
+.add-photo-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+}
+
+.add-photol-title {
+	font-family: Work Sans;
+	font-size: 26px;
+	margin-bottom: 36px;
+}
+
+.rectangle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 420px;
+	height: 169px;
+	border-radius: 3px;
+	background: #E8F1F6;
+	gap: 6px;
+	margin-bottom: 10px;
+}
+
+.button-add-photo {
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	background: #CBD6DC;
+	color: #306685;
+	text-align: center;
+	border: none;
+	font-family: 'Work Sans';
+	cursor: pointer;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.input-wrapper {
+ margin-top: 10px;
+}
+
+input[type="text" i] {
+	width: 420px;
+	height: 51px;
+	background: #FFF;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+
+.add-photo-content input[type="text"] {
+    border: none;
+    outline: none;
+}
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.input-wrapper svg {
+    position: absolute;
+    right: 50px; 
+    top: 60%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+#photo-form {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.validate-add-photo {
+	width: 139px;
+	color: #FFF;
+	text-align: center;
+	font-family: 'Syne';
+	border-radius: 60px;
+	background: #A7A7A7;
+}
+
+.btn-validate-add-photo {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+svg#close-add-photo-dialog {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
 
 /** black-bloc**/
 .black-bloc {
