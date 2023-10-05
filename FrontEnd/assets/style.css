@@ -681,14 +681,14 @@ figure {
 }
 
 .validate {
-	text-align: center;
-	margin-left: 85px;
+    text-align: center;
+    margin-left: 85px;
 }
 
 .validate button {
-	background: #A7A7A7;
-	width: 237px;
-	height: 36px;
+    background: #A7A7A7;
+    width: 237px;
+    height: 36px;
 }
 
 /** black-bloc**/

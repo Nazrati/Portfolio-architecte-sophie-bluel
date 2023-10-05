@@ -57,8 +57,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if (file) {
             previewFile.src = URL.createObjectURL(file)
             previewFile.style.display = 'block'
+
+             // Cacher l'icône et la section add-photo-content
+        document.querySelector(".fa-regular.fa-image.fa-2xl").style.display = 'none';
+        document.querySelector(".button-add-photo").style.display = 'none';
+        document.querySelector(".jpg").style.display = 'none';
         }
     })
+
 
     fileInput.addEventListener('input', validateForm)
     textTitleInput.addEventListener('input', validateForm)
@@ -101,16 +107,8 @@ export const createModal = ({ onSave}) => {
 }
 
 
-document.querySelector("input[type='file']").addEventListener('change', (event) => {
-    const file = event.target.files[0]
-    if (file) {
-        previewFile.src = URL.createObjectURL(file)
-        previewFile.style.display = 'block'
+
         
-        // Cacher l'icône et la section add-photo-content
-        document.querySelector(".fa-regular.fa-image.fa-2xl").style.display = 'none';
-        document.querySelector(".button-add-photo").style.display = 'none';
-        document.querySelector(".jpg").style.display = 'none';
-    }
-})
+       
+
 
