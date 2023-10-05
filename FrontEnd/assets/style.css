@@ -398,6 +398,10 @@ a {
 	border: 1px solid #f5c6cb;
 }
 
+.logout {
+ display: none;
+}
+
 /** dialogue:modal**/
 dialog {
 	border-radius: 10px;
@@ -412,7 +416,8 @@ dialog button {
 	font-family: 'Syne';
 	border-radius: 60px;
 	border-color: transparent;
-	padding: 10px 15px;
+	width: 237px;
+		height: 36px;
 }
 
 dialog {
@@ -425,7 +430,6 @@ dialog {
 	right: 10px;
 	cursor: pointer;
 }
-
 
 dialog>button {
 	position: absolute;
@@ -457,7 +461,6 @@ dialog>button {
 	font-family: 'Work Sans';
 	font-size: 26px;
 }
-
 
 .modal-gallery {
 	display: flex;
@@ -534,21 +537,15 @@ figure {
 	left: 63%;
 }
 
-/** add-photo-section**/
-.add-photo-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 6px;
-}
-
-.add-photol-title {
-	font-family: Work Sans;
+/** section preview**/
+.add-photo-title {
+	font-family: 'Work Sans';
 	font-size: 26px;
-	margin-bottom: 36px;
+	margin-bottom: 25px;
+		margin-left: 90px;
 }
 
-.rectangle {
+.add-photo-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -558,12 +555,17 @@ figure {
 	border-radius: 3px;
 	background: #E8F1F6;
 	gap: 6px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
+	margin-left: 80px;
+}
+	
+	.add-photo-content .fa-regular,
+	.far {
+		font-weight: 400;
+		margin-bottom: 20px;
 }
 
-.button-add-photo {
-	width: 173px;
-	height: 36px;
+.add-photo-content input[type="file" i] {
 	border-radius: 50px;
 	background: #CBD6DC;
 	color: #306685;
@@ -571,10 +573,48 @@ figure {
 	border: none;
 	font-family: 'Work Sans';
 	cursor: pointer;
+	padding: 15px;
+}
+	
+.add-photo-content img {
+	display: none;
+}
+	
+.add-photo-content p {
+		margin-bottom: 10px;
+}
+
+.btn-file {
+    display: none; 
+}
+
+.preview-file {
+	width: 129px;
+	height: auto;
+}
+
+.button-add-photo {
+    cursor: pointer;
+    border-radius: 50px;
+    background: #CBD6DC;
+    color: #306685;
+    text-align: center;
+    display: flex;
+    font-family: 'Work Sans';
+}
+
+.button-add-photo::before {
+    content: "+ Ajouter photo";
+    margin: 15px;
+}
+
+.button-add-photo:hover {
+    background: #306685;
+    color: #CBD6DC;
 }
 
 .input-group {
-	display: flex;
+    display: flex;
 	flex-direction: column;
 	align-items: start;
 	gap: 10px;
@@ -585,21 +625,33 @@ figure {
  margin-top: 10px;
 }
 
-input[type="text" i] {
+.add-photo-content input[type="text" i] {
+	border: none;
+	outline: none;
+}
+
+.input-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+#title,
+#categoryId {
 	width: 420px;
 	height: 51px;
 	background: #FFF;
 	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	border: none;
+	outline: none;
+	margin-left: 80px;
 }
 
-.add-photo-content input[type="text"] {
-    border: none;
-    outline: none;
+.input-group label {
+	margin-left: 80px;
 }
 
-.input-wrapper {
-    position: relative;
-    display: inline-block;
+.input-wrapper label {
+	margin-left: 80px;
 }
 
 .input-wrapper svg {
@@ -617,29 +669,27 @@ input[type="text" i] {
     align-items: center;
 }
 
-.validate-add-photo {
-	width: 139px;
-	color: #FFF;
-	text-align: center;
-	font-family: 'Syne';
-	border-radius: 60px;
-	background: #A7A7A7;
-}
-
-.btn-validate-add-photo {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-svg#close-add-photo-dialog {
+#close-add-photo-dialog {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
 
+#photo-form .separator-line {
+	margin-left: 80px;
+}
 
+.validate {
+	text-align: center;
+	margin-left: 85px;
+}
+
+.validate button {
+	background: #A7A7A7;
+	width: 237px;
+	height: 36px;
+}
 
 /** black-bloc**/
 .black-bloc {
@@ -648,7 +698,7 @@ svg#close-add-photo-dialog {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 19px;
+	gap: 10px;
 	background-color: black;
 	width: 100vw;
 	height: 60px;
