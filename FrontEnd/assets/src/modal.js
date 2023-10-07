@@ -1,3 +1,5 @@
+import { showNotification } from "./notification.js"
+
 const editModifier = document.getElementById('edit-media');
 const dialog = document.getElementById('media-dialog');
 const closeSvg = document.getElementById('close-dialog');
@@ -65,21 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
-
-    fileInput.addEventListener('input', validateForm)
-    textTitleInput.addEventListener('input', validateForm)
-    selectInput.addEventListener('input', validateForm)
-
-    function validateForm() {
-        if (fileInput.value !== '' && textTitleInput.value !== '' && selectInput.value !== '') {
-            formButton.style.background = '#a7a7a7'
-            formButton.disabled = true
-        } else {
-            formButton.style.background = '#1d6154'
-            formButton.disabled = false
-
-        }
-    }
 });
 
 const handleFormSubmit = () => {
@@ -93,6 +80,8 @@ const handleFormSubmit = () => {
         formData.append("image", image)
         formData.append("title", title)
         formData.append("category", categoryId)
+    } else {
+        showNotification("Formulaire invalide.", false)
     }
 
     return formData

@@ -396,6 +396,7 @@ a {
 	background-color: #f8d7da;
 	color: #721c24;
 	border: 1px solid #f5c6cb;
+	
 }
 
 .logout {
@@ -417,7 +418,9 @@ dialog button {
 	border-radius: 60px;
 	border-color: transparent;
 	width: 237px;
-		height: 36px;
+	height: 36px;
+	position: fixed;
+    bottom: 60px;
 }
 
 dialog {
@@ -453,6 +456,7 @@ dialog>button {
 	align-items: center;
 	justify-content: space-between;
 	padding-left: 20px;
+	position: absolute;
 }
 
 .modal-title {
@@ -503,11 +507,17 @@ figure {
     width: 420px;
     height: 1px;
     background: #B3B3B3;
-    margin-top: 20px; 
+    margin-top: 50px; 
     margin-bottom: 20px; 
     align-self: center; 
+	margin-left: 10px;
 }
 
+#photo-form .separator-line {
+    margin-top: 20px; 
+	margin-bottom: 20px; 
+}
+ 
 .edit-container {
 	display: flex;
 	align-items: center;
@@ -685,10 +695,12 @@ figure {
     margin-left: 85px;
 }
 
-.validate button {
-    background: #A7A7A7;
+.validate>button {
+    background: #1D6154;
     width: 237px;
     height: 36px;
+	margin-top: unset;
+	position: unset;
 }
 
 /** black-bloc**/
