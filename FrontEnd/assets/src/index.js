@@ -46,7 +46,8 @@ const init = async () => {
 		document.querySelector(".black-bloc").style.display = "flex";
 		document.querySelector(".filter").style.display = "none";
 		document.querySelector(".login").style.display = "none";
-    document.querySelector(".logout").style.display = "block";
+        document.querySelector(".logout").style.display = "block";
+		document.querySelector(".edit-portfolio").style.display = "flex";
 	}
 
 	const works = await fetchWorks();

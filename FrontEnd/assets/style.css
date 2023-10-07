@@ -530,6 +530,11 @@ figure {
 	gap: 10px;
 }
 
+
+.edit-portfolio {
+	display: none;
+}
+
 #introduction,
 #portfolio {
 	position: relative;
